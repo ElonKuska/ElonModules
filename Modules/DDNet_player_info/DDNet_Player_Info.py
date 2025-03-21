@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 
 @loader.tds
 class ProfileMod(loader.Module):
-    """Модуль для получения информации о профиле игрока DDraceNetwork и KOG | By: @ElonModules"""
+    """Модуль для получения информации о профиле игрока DDraceNetwork и KOG"""
 
     strings = {
         "name": "DDNet player info",
