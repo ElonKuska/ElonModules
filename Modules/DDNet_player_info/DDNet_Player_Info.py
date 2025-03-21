@@ -1,4 +1,11 @@
-# developer: @ElonModules
+# 🔒    Licensed under the GNU AGPLv3
+# 🌐 https://www.gnu.org/licenses/agpl-3.0.html
+
+# ---------------------------------------------------------------------------------
+# Name: DDNet player info
+# Description: Модуль для получения информации о профиле игрока DDraceNetwork и KOG
+# meta developer: @ElonKuska
+# ---------------------------------------------------------------------------------
 
 from .. import loader, utils
 import requests
@@ -8,7 +15,7 @@ from bs4 import BeautifulSoup
 
 @loader.tds
 class ProfileMod(loader.Module):
-    """Модуль для получения информации о профиле игрока DDraceNetwork и KOG | developer: @ElonModules"""
+    """Модуль для получения информации о профиле игрока DDraceNetwork и KOG | By: @ElonModules"""
 
     strings = {
         "name": "DDNet player info",
