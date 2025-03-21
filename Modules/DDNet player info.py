@@ -12,7 +12,7 @@ class ProfileMod(loader.Module):
 
     strings = {
         "name": "DDNet player info",
-        "no_name": "❌ Имя игрока не указано",
+        "no_name": "❌ Имя игрока ",
         "error_fetch": "❌ Не удалось получить информацию о профиле",
         "fetching_ddnet": "🔍 Получаю информацию о игроке DDraceNetwork <code>{name}</code>...",
         "fetching_kog": "🔍 Получаю информацию о игроке KOG <code>{nickname}</code>...",
@@ -70,7 +70,8 @@ class ProfileMod(loader.Module):
         try:
             response = requests.get(f"https://ddnet.org/players/?json2={api_name}", 
                                     headers={'Accept': 'application/json'})
-if response.status_code != 200:
+
+            if response.status_code != 200:
                 await utils.answer(message, self.strings["error_fetch"])
                 return
 
@@ -156,7 +157,6 @@ if response.status_code != 200:
             if reply and reply.from_id:
                 player_name = reply.message
             else:
-
                 await utils.answer(message, self.strings["no_name"])
                 return
         else:
@@ -164,7 +164,7 @@ if response.status_code != 200:
 
         fetching_message = await utils.answer(message, self.strings["fetching_kog"].format(nickname=player_name))
 
-await asyncio.sleep(2)  
+        await asyncio.sleep(2)  
 
         player_info = self.get_player_info(player_name)
 
@@ -172,9 +172,9 @@ await asyncio.sleep(2)
             played_hours = self.convert_time_to_hours(player_info.get('Hours', '0 months, 0 days, 0 hours, 0 minutes, 0 seconds'))
 
             output = self.strings["points_info_kog"].format(
-                nickname=player_info.get('Nickname', 'Нету),
+                nickname=player_info.get('Nickname', 'Нету'),
                 played_hours=played_hours,
-                points=player_info.get('Points', 'Нету),
+                points=player_info.get('Points', 'Нету'),
                 rank=player_info.get('Rank', 'Нету'),
                 stats_link=player_info.get('Stats Link', ''),
                 maps=player_info.get('Maps', 'Нету')
@@ -238,5 +238,4 @@ await asyncio.sleep(2)
 
         
 
-        return info
-  
+        return info  
