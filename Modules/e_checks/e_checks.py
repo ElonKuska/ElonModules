@@ -7,7 +7,11 @@ __version__ = (1, 5, 0, 0)
 # You CAN edit this file without direct permission from the author.
 # You can redistribute this file with any modifications.
 
-# meta developer: @ElonModules
+# meta developer: @ElonModules, @yg_modules 
+
+# Forked from: @yg_modules 
+# Forked by: @ElonModules
+
 # scope: hikka_only
 # scope: hikka_min 1.6.3
 
@@ -109,7 +113,7 @@ class Passworder:
 
 @loader.tds
 class e_checks(loader.Module):
-    """Активатор чеков @send (@CryptoBot)"""
+    """Активатор чеков @send (@CryptoBot) (Fork Module t.me/yg_modules/113)"""
 
     strings = {
         "name": "e_checks",
