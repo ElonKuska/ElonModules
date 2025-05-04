@@ -229,7 +229,7 @@ class e_checks(loader.Module):
             ),
             loader.ConfigValue(
                 "onlysq_model",
-                "gpt-4o-mini",
+                "gpt-4",
                 doc=lambda: self.strings("onlysq_model_desc"),
                 validator=loader.validators.String(),
             ),
